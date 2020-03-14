@@ -13,17 +13,12 @@ module.exports = {
     alias: {
       'assets': utils.resolve('assets'),
       'static': utils.resolve('static'),
-      'packages': utils.resolve('packages')
+      'packages': utils.resolve('packages'),
     }
   },
 
   module: {
     rules: [
-      // {
-      //   test: /\.(js|vue)$/,
-      //   use: 'eslint-loader',
-      //   enforce: 'pre'
-      // }, 
       {
         test: /\.vue$/,
         use: 'vue-loader'
@@ -80,12 +75,6 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html',
-      filename: 'index.html',
-      favicon:'./favicon.ico',
-      inject: true
-    }),
     new VueLoaderPlugin(),
     new CopyWebpackPlugin([{
       from: utils.resolve('static/img'),

@@ -22,6 +22,11 @@
 </div>
 
 
+![readme-zh.png](https://github.com/ninecat-ui/ninecat-ui/blob/master/static/readme-zh.png?raw=true)
+
+English | [简体中文](./README-zh_CN.md)
+
+
 ## 📦 Install 
 
 ```bash
@@ -53,3 +58,37 @@ Vue.component(Button.name, Button)
 
 ## 🖥  Browser Support
 Modern browsers and Internet Explorer 10+.
+
+## 🔗 Links
+
+- [Home page](https://ninecat-ui.github.io)
+- [Contribution Guide](./.github/CONTRIBUTING.en-US.md)
+
+## ⌨️ Development
+
+Clone locally
+
+```bash
+$ git clone https://github.com/ninecat-ui/ninecat-ui.git
+$ cd ninecat-ui
+$ yarn install
+$ yarn start
+```
+
+## ✅ Todo List
+
+- [x] Document directory custom configuration.
+- [x] Preview demo online.
+- [x] Integrate Travis CI.
+- [x] Integrate codecov.
+- [x] Building documents automatically. 
+- [x] Tag to build npm packages automatically.
+- [x] Component unit testing. 
+- [x] Integrate docsearch.(Some problems,need fix.)
+- [ ] Common component develop.(Doing)
+- [ ] Integrate codepen.
+- [ ] Color theme customization.
+- [ ] Globalization.
+- [ ] Mixed develop with typescript and JavaScript.
+
+

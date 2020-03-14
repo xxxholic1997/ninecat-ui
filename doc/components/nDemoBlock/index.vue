@@ -1,6 +1,8 @@
 <template>
   <div
     class="grid"
+    @mouseenter="hovering = true"
+    @mouseleave="hovering = false"
   >
     <div
       ref="meta"
@@ -28,6 +30,19 @@
         <n-icon
           :name="iconName"
         />
+        <span v-show="hovering">{{ hoveringText }}</span>
+        <!-- Todo -->
+        <!-- <span
+          v-show="hovering"
+          class="demo-button"
+        >
+          <n-button
+            type="link"
+            size="sm"
+          >
+            在线运行
+          </n-button>
+        </span> -->
       </div>
     </div>
   </div>
@@ -38,7 +53,8 @@ export default {
   name: 'DemoBlock',
   data: function () {
     return {
-      metaShow: false
+      metaShow: false,
+      hovering: false
     }
   },
   computed: {
@@ -47,6 +63,13 @@ export default {
         return 'icon-sort-up'
       } else {
         return 'icon-sort-down'
+      }
+    },
+    hoveringText () {
+      if (this.metaShow) {
+        return 'Hide'
+      } else {
+        return 'Expand'
       }
     }
   },
@@ -108,6 +131,10 @@ export default {
       &:focus,&:hover{
         color:#34C3FF;
       };
+      .demo-button{
+        position: absolute;
+        right: 10px;
+      }
     }
   }
 }

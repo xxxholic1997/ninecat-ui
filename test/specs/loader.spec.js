@@ -4,8 +4,7 @@ import nLoader from '../../packages/nLoader'
 describe('nLoader', () => {
   it('render Loading... text default', () => {
     let nLoaderVm = getRenderedVm(nLoader, {
-      show: true,
-      size: ''
+      show: true
     })
     expect(nLoaderVm.loaddingText).toEqual('Loading...')
   })

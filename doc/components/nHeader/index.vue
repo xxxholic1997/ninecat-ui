@@ -14,13 +14,7 @@
         class="ndoc-search"
         :placeholder="searchPlaceholder"
       >
-
       <ul class="nav">
-        <!-- <li class="item">
-          <span class="cube version">
-            1.0.1
-          </span>
-        </li> -->
         <li class="item">
           <span
             class="cube lang"
@@ -55,10 +49,10 @@
 </template>
 
 <script>
-
+import 'docsearch.js/dist/cdn/docsearch.min.css'
+import docsearch from 'docsearch.js'
 export default {
   name: 'NHeader',
-  components: {},
   props: {
     config: {
       type: Object,
@@ -81,6 +75,12 @@ export default {
   },
   mounted () {
     this.setLang()
+    docsearch({
+      apiKey: 'e3b8bf7a6a9475a23bf57ac66efc6960',
+      indexName: 'ninecat-ui',
+      inputSelector: '.ndoc-search',
+      debug: false // Set debug to true if you want to inspect the dropdown
+    })
   },
   methods: {
     setLang () {
@@ -94,7 +94,6 @@ export default {
       }
     },
     changeLang () {
-      console.log(this.lang)
       if (this.lang === 'English') {
         this.lang = '中文'
         window.sessionStorage.setItem('lang', 'en-US')
@@ -121,6 +120,7 @@ export default {
     line-height: 60px;
     .logo{
       display: block;
+      text-decoration: none;
       img,span{
         display: inline-block;
         vertical-align: middle;
@@ -140,7 +140,7 @@ export default {
       border: none;
       color: #fff;
       font-size: 14px;
-      margin-left: 140px;
+      // left: 140px;
       background-color: transparent;
       &:focus {
         outline: none;
@@ -149,6 +149,9 @@ export default {
         opacity: 0.7;
         color: #fff;
       }
+    }
+    .algolia-autocomplete{
+      left: 140px;
     }
     .nav{
       flex: 1;

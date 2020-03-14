@@ -1,4 +1,6 @@
-const localLang = window.sessionStorage.getItem('lang')
+const navigatorLanguage = navigator.language || navigator.userLanguage
+
+const localLang = window.sessionStorage.getItem('lang') || navigatorLanguage
 
 export default {
   headerConfig: {
@@ -93,6 +95,14 @@ export default {
             {
               path: '/nPagination',
               name: 'Pagination'
+            }]
+        },
+        {
+          groupName: localLang === 'en-US' ? 'Data Entry' : '数据录入',
+          list: [
+            {
+              path: '/nUpload',
+              name: 'Upload'
             }]
         }
       ]
