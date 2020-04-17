@@ -17,6 +17,8 @@
         <tr
           v-for="(dataItem,index) in currentData"
           :key="index"
+          @click="onClickRow(dataItem,$event)"
+          @dblclick="onDbClickRow(dataItem,$event)"
         >
           <td
             v-for="(item,itemIndex) in dealTableData(dataItem,currentColumns)"
@@ -39,32 +41,50 @@ export default {
     columns: {
       type: Array,
       default: function () {
-        return []
+        return [];
       }
     },
     data: {
       type: Array,
       default: function () {
-        return []
+        return [];
       }
+    },
+    rowClick: {
+      type: Function,
+      default: null
+    },
+    rowDbclick: {
+      type: Function,
+      default: null
     }
   },
   data: function () {
     return {
       currentColumns: this.columns,
       currentData: this.data
-    }
+    };
   },
   methods: {
     dealTableData (currentDataItem, currentColumns) {
-      let res = []
+      let res = [];
       currentColumns.forEach((item, index) => {
-        res.push(currentDataItem[item.dataIndex])
-      })
-      return res
+        res.push(currentDataItem[item.dataIndex]);
+      });
+      return res;
+    },
+    onClickRow (dataItem, e) {
+      if (this.rowClick) {
+        this.rowClick(dataItem, e);
+      }
+    },
+    onDbClickRow (dataItem, e) {
+      if (this.rowDbclick) {
+        this.rowDbclick(dataItem, e);
+      }
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

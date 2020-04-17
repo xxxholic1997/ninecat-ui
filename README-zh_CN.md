@@ -1,12 +1,12 @@
 <p align="center">
   <a href="https://ninecat-ui.github.io">
-    <img width="100" src="https://avatars3.githubusercontent.com/u/51054939?s=400&u=8d6342ba8bf5106086c26318ee290452501c6dff&v=4">
+    <img width="161" height="125" src="https://upload-images.jianshu.io/upload_images/8108267-b9d5a9dea5e57a79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" />
   </a>
 </p>
 
 <h1 align="center">ninecat-ui</h1>
 
-<h3 align="center">一个 Vue 2.0 UI Web框架</h3>
+<h3 align="center">一个清爽的Vue 2.0 UI Web框架</h3>
 
 
 
@@ -14,24 +14,26 @@
 
 [![Build Status](https://travis-ci.com/ninecat-ui/ninecat-ui.svg?branch=master)](https://travis-ci.com/ninecat-ui/ninecat-ui)
 [![codecov](https://codecov.io/gh/ninecat-ui/ninecat-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/ninecat-ui/ninecat-ui)
-![](https://img.shields.io/badge/license-MIT-000000.svg)
-![](https://img.shields.io/badge/webpack-4-blue.svg)
-![](https://img.shields.io/badge/vue-2.6.10-green.svg)
-![](https://img.shields.io/badge/npm-6.4.1-lightblue.svg)
+![MIT](https://img.shields.io/badge/license-MIT-000000.svg)
+![webpack](https://img.shields.io/badge/webpack-4-blue.svg)
+![vue](https://img.shields.io/badge/vue-2.6.10-green.svg)
 
 </div>
 
 
-![readme-en.png](https://github.com/ninecat-ui/ninecat-ui/blob/master/static/readme-en.png?raw=true)
+<img style="height:100%;width:100%" src="https://github.com/ninecat-ui/ninecat-ui/blob/master/static/Screenshot_zh_new.png?raw=true"/>
+
 
 简体中文 | [English](./README.md)
 
 
 ## 📦 安装
+通过npm
 
 ```bash
 npm install ninecat-ui --S
 ```
+通过yarn
 
 ```bash
 yarn add ninecat-ui
@@ -86,10 +88,16 @@ $ yarn start
 - [x] 自动通过git tag 发布npm
 - [x] 完成组件单元测试
 - [x] 集成Docsearch
+- [x] 支持JSX语法开发
 - [ ] 基本组件开发完善（进行中）
 - [ ] 集成codepen完成在线编辑代码
 - [ ] 自定义主题色
 - [ ] 国际化
 - [ ] Typescript 和 JavaScript混合开发
 
+## 🤝加入讨论群
+
+用[QQ](https://im.qq.com/) 扫描下方二维码加入群聊
+
+<img alter="Discussion Group" src="https://github.com/ninecat-ui/ninecat-ui/blob/master/static/share.JPG?raw=true" width="250px" >
 

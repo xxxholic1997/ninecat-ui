@@ -1,25 +1,28 @@
 
 # Message
 
-用于页面信息提示。
+Used for page information prompts.
 
 ## When To Use
 
 Used for page information prompts.
 
-### Examples
+## Examples
 
 :::demo
 ```html
 <template>
-  <n-button @click="openMessage">Open Message</n-button>
+  <n-button @click="openMessage('info')">Info Message</n-button>
+  <n-button @click="openMessage('success')">Success Message</n-button>
+  <n-button @click="openMessage('warning')">Warning Message</n-button>
+  <n-button @click="openMessage('error')">Error Message</n-button>
 </template>
 <script>
 export default {
   methods:{
-    openMessage(){
+    openMessage(type){
       this.$nMessage({
-        type: 'info',
+        type,
         message: 'I open the Message',
       })
     }

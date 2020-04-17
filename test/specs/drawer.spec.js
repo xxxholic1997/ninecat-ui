@@ -1,10 +1,10 @@
-import { createVue, destroyVm } from '../utils/util'
+import { createVue, destroyVm } from '../utils/util';
 
 describe('nDrawer', () => {
-  let vm
+  let vm;
   afterEach(() => {
-    destroyVm(vm)
-  })
+    destroyVm(vm);
+  });
 
   it('create', () => {
     vm = createVue({
@@ -12,21 +12,33 @@ describe('nDrawer', () => {
       data () {
         return {
           show: true
-        }
+        };
       }
-    }, true)
-    expect(vm.$el).toBeTruthy()
-  })
+    }, true);
+    expect(vm.$el).toBeTruthy();
+  });
 
-  it('open and close', () => {
+  it('confirm', () => {
     vm = createVue({
       template: `<n-drawer title='Drawer Title' :show='show' />`,
       data () {
         return {
           show: true
-        }
+        };
       }
-    }, true)
-    vm.$children[0].$el.querySelector('.nbutton').click()
-  })
-})
+    }, true);
+    vm.$children[0].$el.querySelector('.primary').click();
+  });
+
+  it('cancel', () => {
+    vm = createVue({
+      template: `<n-drawer title='Drawer Title' :show='show' />`,
+      data () {
+        return {
+          show: true
+        };
+      }
+    }, true);
+    vm.$children[0].$el.querySelector('.default').click();
+  });
+});

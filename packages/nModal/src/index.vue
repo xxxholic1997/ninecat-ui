@@ -10,7 +10,10 @@
         tabindex="-1"
         @click="closeModal"
       />
-      <div class="n-modal">
+      <div
+        class="n-modal"
+        :class="sizeClass"
+      >
         <div class="n-modal-content">
           <div class="n-modal-header">
             <div class="title">
@@ -42,8 +45,8 @@
 </template>
 
 <script>
-import Locale from '../../../src/mixins/locale'
-import nButton from '../../nButton'
+import Locale from '../../../src/mixins/locale';
+import nButton from '../../nButton';
 
 export default {
   name: 'NModal',
@@ -60,6 +63,10 @@ export default {
       type: String,
       default: ''
     },
+    size: {
+      type: String,
+      default: 'sm'
+    },
     confirm: {
       type: Function,
       default: function () {}
@@ -69,24 +76,30 @@ export default {
       default: function () {}
     }
   },
+  computed: {
+    sizeClass () {
+      const { size } = this;
+      return size;
+    }
+  },
   methods: {
     closeModal () {
-      this.$emit('update:show', false)
+      this.$emit('update:show', false);
     },
     nconfirm () {
       if (typeof this.confirm === 'function') {
-        this.confirm()
+        this.confirm();
       }
-      this.closeModal()
+      this.closeModal();
     },
     ncancel () {
       if (typeof this.cancel === 'function') {
-        this.cancel()
+        this.cancel();
       }
-      this.closeModal()
+      this.closeModal();
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -111,9 +124,9 @@ export default {
   .n-modal {
     background: #ffffff;
     opacity: 1;
-    width: 600px;
     overflow: visible;
     outline: 0;
+    border-radius: 6px;
     margin: 30px auto 0;
     position: relative;
     z-index: 1050;
@@ -164,6 +177,18 @@ export default {
         text-align: end;
       }
     }
+  }
+  .xs{
+    width: 400px;
+  }
+  .sm{
+    width: 600px;
+  }
+  .md{
+    width: 800px;
+  }
+  .lg{
+    width: 1000px;
   }
 }
 

@@ -7,15 +7,30 @@ Alert component for feedback.
 
 When you need to show alert messages to users.
 
-### Examples
+## Examples
 :::demo
 ```html
 <template>
-  <div>
+  <div >
     <n-alert
       :show="show"
       message="Message"
       type="info"
+    />
+    <n-alert
+      :show="show"
+      message="Message"
+      type="success"
+    />
+    <n-alert
+      :show="show"
+      message="Message"
+      type="warning"
+    />
+    <n-alert
+      :show="show"
+      message="Message"
+      type="error"
     />
   </div>
 </template>
